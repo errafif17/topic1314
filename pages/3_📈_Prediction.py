@@ -3,9 +3,7 @@ import pickle
 import numpy as np
 import streamlit as st
 import pandas as pd
-import datetime
 
-thedate = datetime.date.today()
 def app():
     df = pd.read_csv(r"data/house_price.csv")
 
@@ -82,9 +80,7 @@ def app():
 
     st.markdown("------")
 
-    st.write("###### Version: 1.0")
-    st.write("###### Date: ", thedate)
     
-st.set_page_config(page_title="Prediction", page_icon="📈")
+st.set_page_config(page_title="Prediction")
 
 app()
