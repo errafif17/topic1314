@@ -34,7 +34,7 @@ ST_Slope = st.selectbox('The slope of the peak exercise ST segment',df['ST_Slope
 if st.button('Predict Heart Health'):
     query = np.array([Age,Sex,ChestPainType,RestingBP,Cholesterol,FastingBS,RestingECG,MaxHR,ExerciseAngina,Oldpeak,ST_Slope])
     query = query.reshape(1, 11)
-    result=str(lr.predict(query)[0])
+    result=str(pipe.predict(query)[0])
     if result == 1:
         st.header("You've a heart disease. Please, consult your doctor")
     else:
