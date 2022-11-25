@@ -4,8 +4,9 @@ import pandas as pd
 import numpy as np
 
 # import the model
-pipe = pickle.load(open('pipe.pkl','rb'))
-df = pickle.load(open('df.pkl','rb'))
+df = pd.read_csv(r"../data/house_price.csv")
+pipe = pickle.load(open(r"../pages2/pipe.pkl",'rb'))
+df = pickle.load(open(r"../pages2/df.pkl",'rb'))
 
 st.title("Heart Disease Predictor")
 # st.text("1 means you've a heart disease, 0 means you don't have a heart disease")
