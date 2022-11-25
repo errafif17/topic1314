@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 
 # import the model
-lr = pickle.load(open('lr.pkl','rb'))
+lr = pickle.load(open('pipe.pkl','rb'))
 df = pickle.load(open('df.pkl','rb'))
 
 st.title("Heart Disease Predictor")
