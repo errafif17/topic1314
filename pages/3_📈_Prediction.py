@@ -46,7 +46,7 @@ def app():
 
     st.sidebar.title("Model Parameters")
     
-    expander= st.sidebar.expander("Feature Importance of Model ")
+    expander= st.sidebar.expander()
     
     # Get Feature importance of model
     featureImportances = pd.Series(loaded_model.feature_importances_,index = droppedDf.columns).sort_values(ascending=False)[:20]
