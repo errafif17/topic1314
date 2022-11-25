@@ -1,13 +1,11 @@
 import streamlit as st
 from streamlit.logger import get_logger
 import streamlit.components.v1 as components
-import datetime
 
 LOGGER = get_logger(__name__)
 
-thedate = datetime.date.today()
 def run():
-    st.image(r'./resources/enter_page_image.jpg', use_column_width=True)
+    st.image(r'./enter_page_image.jpg', use_column_width=True)
     # st.set_page_config(page_title="Enter Page", page_icon="💻")
 
     st.write("""
@@ -30,9 +28,7 @@ def run():
     ###### Version: 1.0
     """
     )
-    st.write("###### Date: ", thedate)
-    st.markdown('![Visitor count](https://shields-io-visitor-counter.herokuapp.com/badge?page=https://share.streamlit.io/your_deployed_app_link&label=VisitorsCount&labelColor=000000&logo=GitHub&logoColor=FFFFFF&color=1D70B8&style=for-the-badge)')
-                                        
+                                    
                                           
                             
 
