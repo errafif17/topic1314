@@ -73,7 +73,7 @@ def app():
 
     prediction = loaded_model.predict(inputDf)
 
-    st.write("###### Predicted price of the house in the properties you selected: $", prediction.item())
+    st.write("###### Predicted price of the house: $", prediction)
 
     st.markdown("------")
     
