@@ -43,13 +43,10 @@ def app():
 
     # %% STREAMLIT FRONTEND DEVELOPMENT
     st.title("House Prices Prediction")
-    st.write("##### This is a simple model for house prices prediction.")
 
     st.sidebar.title("Model Parameters")
-    st.sidebar.write("### Feature importance of model")
     
-    expander= st.sidebar.expander("Click Here for Feature Importance of Model ")
-    expander.write("## Feature Importance of Model")
+    expander= st.sidebar.expander("Feature Importance of Model ")
     
     # Get Feature importance of model
     featureImportances = pd.Series(loaded_model.feature_importances_,index = droppedDf.columns).sort_values(ascending=False)[:20]
@@ -76,7 +73,7 @@ def app():
 
     prediction = loaded_model.predict(inputDf)
 
-    st.write("###### Predicted price of the house in the properties you selected: $", prediction.item())
+    st.write("###### Predicted price of the house : $", prediction.item())
 
     st.markdown("------")
 
