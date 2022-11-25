@@ -42,7 +42,7 @@ def app():
     loaded_model = pickle.load(open(modelName, 'rb'))
 
     # %% STREAMLIT FRONTEND DEVELOPMENT
-    st.title("House Prices Prediction")
+    st.title("House Prices Prediction", prediction.item())
 
     st.sidebar.title("Model Parameters")
     
@@ -72,8 +72,6 @@ def app():
         inputDf[feature] = inputDf[feature].astype('category')
 
     prediction = loaded_model.predict(inputDf)
-
-    st.write("## Predicted price of the house: $", prediction.item())
 
     st.markdown("------")
     
