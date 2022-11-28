@@ -16,14 +16,14 @@ def app():
 
     droppedDf.isnull().sum().sort_values(ascending=False)
     droppedDf["Alley"].fillna("NO", inplace=True)
-    droppedDf["LotFrontage"].fillna(df.LotFrontage.mean(), inplace=True)
+    droppedDf["Linear feet of street connected to property"].fillna(df["Linear feet of street connected to property"].mean(), inplace=True)
     droppedDf["GarageFinish"].fillna("NO", inplace=True)
-    droppedDf["GarageYrBlt"].fillna(df.GarageYrBlt.mean(), inplace=True)
+    droppedDf["Year garage was built"].fillna(df["Year garage was built"].mean(), inplace=True)
     droppedDf["BsmtQual"].fillna("NO", inplace=True)
-    droppedDf["MasVnrArea"].fillna(0, inplace=True)
-    droppedDf['MasVnrAreaCatg'] = np.where(droppedDf.MasVnrArea > 1000, 'BIG',
-                                    np.where(droppedDf.MasVnrArea > 500, 'MEDIUM',
-                                    np.where(droppedDf.MasVnrArea > 0, 'SMALL', 'NO')))
+    droppedDf["Masonry veneer area square feet"].fillna(0, inplace=True)
+    droppedDf['Masonry veneer area category'] = np.where(droppedDf["Masonry veneer area square feet"] > 1000, 'BIG',
+                                    np.where(droppedDf["Masonry veneer area square feet"] > 500, 'MEDIUM',
+                                    np.where(droppedDf["Masonry veneer area square feet"] > 0, 'SMALL', 'NO')))
 
     droppedDf = droppedDf.drop(['SalePrice'], axis=1)
     inputDf = droppedDf.iloc[[0]].copy()
