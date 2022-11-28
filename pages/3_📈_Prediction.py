@@ -6,6 +6,7 @@ import pandas as pd
 
 def app():
     df = pd.read_csv(r"data/house_price.csv")
+    df.rename(columns={'LotArea': 'Lot size square feet', 'GrLivArea': 'Above grade (ground) living area square feet', 'BsmtFinSF1':'Type 1 finished square feet', 'LotFrontage': 'Linear feet of street connected to property', 'TotalBsmtSF': 'Total square feet of basement area', 'Neighborhood': 'Physical locations within Ames city limits', '1stFlrSF': 'First Floor square feet', 'GarageArea': 'Size of garage square feet', 'MasVnrArea': 'Masonry veneer area square feet', 'OverallQual': 'Overall material and finish quality', 'YearRemodAdd': 'Remodel date', '2ndFlrSF': 'Second floor square feet', 'MasVnrAreaCatg': 'Masonry veneer area category', 'GarageYrBlt': 'Year garage was built', 'YearBuilt': 'Original construction date', 'Fireplaces':'Number of fireplaces', 'TotRmsAbvGrd': 'Total rooms above grade (does not include bathrooms)', 'ExterQual': 'Exterior material quality', 'GarageCars': 'Size of garage in car capacity', 'HouseStyle': 'Style of housing'}, inplace=True)
 
     dropColumns = ["Id", "MSSubClass", "MSZoning", "Street", "LandContour", "Utilities", "LandSlope", "Condition1", "Condition2", "BldgType", "OverallCond", "RoofStyle",
                 "RoofMatl", "Exterior1st", "Exterior2nd", "MasVnrType", "ExterCond", "Foundation", "BsmtCond", "BsmtExposure", "BsmtFinType1",
