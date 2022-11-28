@@ -75,8 +75,6 @@ def app():
     prediction = loaded_model.predict(inputDf)
     
     st.write("## $", prediction.item())
-
-    st.markdown("------")
     
 st.set_page_config(page_title="Prediction")
 
