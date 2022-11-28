@@ -38,7 +38,7 @@ def app():
         inputDf[feature] = inputDf[feature].astype('category')
 
     # load the model weights and predict the target
-    modelName = r"trained_model.model"
+    modelName = r"finalized_model.model"
     loaded_model = pickle.load(open(modelName, 'rb'))
 
     # %% STREAMLIT FRONTEND DEVELOPMENT
